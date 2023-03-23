@@ -1,0 +1,59 @@
+@import url("./reset.css");
+
+:root {
+  --font: "Poppins", sans-serif;
+  --color1: #a7727d;
+  --color2: #eddbc7;
+  --color3: #f8ead8;
+  --color4: #f9f5e7;
+  --color5: #282a3a;
+}
+body {
+  font-family: var(--font);
+  background-color: var(--color4);
+  min-height: 100vh;
+}
+header {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+header,
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 2rem;
+}
+
+.todo-input,
+.todo-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  background: var(--color3);
+}
+
+form button {
+  color: var(--color1);
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: var(--color1);
+  color: var(--color3);
+}
+form .todo-check-completed {
+  cursor: pointer;
+  font-size: 0.775rem;
+  letter-spacing: 1px;
+  margin-inline-start: 1.5rem;
+}

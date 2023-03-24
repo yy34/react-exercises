@@ -18,25 +18,20 @@ header {
   text-transform: uppercase;
   letter-spacing: 3px;
 }
-.App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+
 header,
 form {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block: 2rem;
+  margin-block-start: 3rem;
+  margin-block-end: 1.5rem;
 }
 
 .todo-input,
 .todo-button {
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
   border: none;
   background: var(--color3);
 }
@@ -56,4 +51,47 @@ form .todo-check-completed {
   font-size: 0.775rem;
   letter-spacing: 1px;
   margin-inline-start: 1.5rem;
+}
+form .todo-check-completed input {
+  appearance: auto;
+  margin-inline-end: 0.5rem;
+}
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  background: var(--color3);
+  font-size: 0.775rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color4);
+  transition: all 1s ease;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.remove-btn,
+.complete-btn {
+  background: var(--color1);
+  color: var(--color3);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.775rem;
+}
+.complete-btn {
+  background: var(--color2);
 }

@@ -35,6 +35,10 @@ form {
   border: none;
   background: var(--color3);
 }
+.todo-input::placeholder {
+  color: var(--color1);
+  font-size: 0.775rem;
+}
 
 form button {
   color: var(--color1);
@@ -94,4 +98,22 @@ form .todo-check-completed input {
 }
 .complete-btn {
   background: var(--color2);
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-remove,
+.fa-check {
+  pointer-events: none;
+}
+
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }

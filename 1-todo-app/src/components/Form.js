@@ -12,6 +12,7 @@ const Form = ({ setNewTodo, newTodo, todos, setTodos }) => {
     ]);
     setNewTodo("");
   };
+
   return (
     <form>
       <input

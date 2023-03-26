@@ -22,7 +22,10 @@ const Todo = ({ todoText, todo, setTodos, todos }) => {
       <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
         {todoText}
       </li>
-      <button onClick={completeTodo} className="complete-btn">
+      <button
+        onClick={completeTodo}
+        className={`complete-btn ${todo.completed ? "completed" : ""}`}
+      >
         <i className="fas fa-check"></i>
       </button>
       <button onClick={removeTodo} className="remove-btn">

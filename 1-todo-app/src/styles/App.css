@@ -54,7 +54,7 @@ form .todo-check-completed {
   cursor: pointer;
   font-size: 0.775rem;
   letter-spacing: 1px;
-  margin-inline-start: 1.5rem;
+  margin-inline: 1.5rem;
 }
 form .todo-check-completed input {
   appearance: auto;
@@ -64,6 +64,8 @@ form .todo-check-completed input {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 3rem;
   min-height: 40vh;
 }
 
@@ -97,7 +99,10 @@ form .todo-check-completed input {
   font-size: 0.775rem;
 }
 .complete-btn {
-  background: var(--color2);
+  background-color: var(--color5);
+}
+.complete-btn.complete {
+  background-color: var(--color1);
 }
 .todo-item {
   padding: 0rem 0.5rem;
@@ -116,4 +121,15 @@ form .todo-check-completed input {
 .completed {
   text-decoration: line-through;
   opacity: 0.5;
+}
+.todo-count {
+  font-size: 0.775rem;
+  text-align: center;
+  letter-spacing: 1px;
+  color: var(--color5);
+}
+
+.todo-count strong {
+  color: var(--color1);
+  font-weight: 700;
 }

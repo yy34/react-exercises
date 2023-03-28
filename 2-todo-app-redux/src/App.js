@@ -1,13 +1,11 @@
 import { TodoList } from "./components/TodoList";
 import { Form } from "./components/Form";
-import "./styles/index.css";
+import "./styles/index.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header text-center">
-        React Todo App With Redux
-      </header>
+    <div className="todo-wrapper">
+      <header className="App-header">React Todo App With Redux</header>
       <Form />
       <TodoList />
     </div>

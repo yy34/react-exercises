@@ -1,8 +1,10 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addNewTodo } from "../store/actions/todoActions";
 
 export const Form = () => {
   const [todo, setTodo] = useState("");
+  const dispatch = useDispatch();
   const addTodo = (e) => {
     e.preventDefault();
     let newTodo = {
@@ -11,7 +13,7 @@ export const Form = () => {
       id: new Date().getTime(),
     };
     setTodo("");
-    console.log(newTodo);
+    dispatch(addNewTodo(newTodo));
   };
   return (
     <form className="form-group" onSubmit={addTodo}>
@@ -24,8 +26,11 @@ export const Form = () => {
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
         />
-        <button type="submit" className="btn btn-primary rounded-0 btn-md w-25">
-          Add Todo
+        <button
+          type="submit"
+          className="btn btn-primary rounded-0 btn-md w-25 text-uppercase"
+        >
+          Add
         </button>
       </div>
     </form>

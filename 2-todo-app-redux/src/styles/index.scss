@@ -4,25 +4,71 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    gap: 3rem;
     padding-block-end: 5rem;
 
     header {
         font-weight: 300;
-        letter-spacing: .3rem;
+        letter-spacing: 0.3rem;
         font-size: 1.5rem;
         text-transform: uppercase;
         margin-block-end: 1rem;
     }
 
     .form-group {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .form-group,
+    .item-container {
         width: 100%;
         max-width: 450px;
+        margin-block: 2rem;
 
         input,
         button {
-            font-size: .875rem;
+            font-size: 0.875rem;
         }
 
+        input {
+            padding: 10px;
+
+            &::placeholder {
+                font-size: 0.775rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+            }
+        }
+    }
+
+    .item-container {
+        .item-wrapper {
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            padding: 0.5rem 1rem;
+            margin-block-end: 0.7rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+
+            &:hover {
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+
+            .item {
+                &.completed {
+                    text-decoration: line-through;
+                }
+            }
+
+            .todo-actions {
+                margin-inline-start: auto;
+
+                button {
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
     }
 }

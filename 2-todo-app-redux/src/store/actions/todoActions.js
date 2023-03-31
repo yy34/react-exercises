@@ -6,6 +6,12 @@ export const addNewTodo = (payload) => {
     payload,
   };
 };
+export const completeTodo = (payload) => {
+  return {
+    type: TYPES.COMPLETE_TODO,
+    payload,
+  };
+};
 
 export const removeTodo = (payload) => {
   return {

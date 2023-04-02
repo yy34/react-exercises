@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import * as TYPES from "../constants/ActionTypes";
-import appReducer from "./AppReducer";
+import AppReducer from "./AppReducer";
 
 const initialState = {
   users: [],
@@ -8,7 +8,7 @@ const initialState = {
 
 export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(appReducer, initialState);
+  const [state, dispatch] = useReducer(AppReducer, initialState);
   const createUser = (user) => {
     dispatch({
       type: TYPES.CREATE_USER,

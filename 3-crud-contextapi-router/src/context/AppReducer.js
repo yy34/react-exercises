@@ -1,13 +1,12 @@
 import * as TYPES from "../constants/ActionTypes";
 
-export default function appReducer(state, action) {
+export default function AppReducer(state, action) {
   switch (action.type) {
     case TYPES.CREATE_USER:
       return {
         ...state,
-        users: [...state.users, action.payload],
+        users: [action.payload, ...state.users],
       };
-
     case TYPES.UPDATE_USER:
       const updateUser = action.payload;
       const updateUsers = state.users.map((user) => {

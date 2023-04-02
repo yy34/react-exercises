@@ -23,7 +23,7 @@ export const CreateUser = () => {
 
   return (
     <Row>
-      <Col span={6} offset={9}>
+      <Col span={12} offset={6}>
         <Form form={form} name="control-hooks" onFinish={onFinish}>
           <Form.Item name="name" rules={[{ required: true }]}>
             <Input placeholder="New User Name" />

@@ -9,8 +9,8 @@ export const SearchUser = ({
   const [userName, setUserName] = useState("");
 
   return (
-    <div>
-      <Space style={{ width: "100%" }}>
+    <div className="search-user">
+      <Space>
         <Input
           onChange={(e) => setUserName(e.target.value)}
           placeholder="Enter a username"

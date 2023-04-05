@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { IUser } from "../types/IUser";
 import { Card, Descriptions, Space, Badge } from "antd";
+import { UserProps } from "./userProps";
 
 const { Meta } = Card;
-export const User = (user: IUser) => {
+export const User = ({ user }: UserProps) => {
   return (
     <div>
-      <Space>
+      <div className="userInfo">
         <Descriptions title="User Info" bordered>
           <Descriptions.Item label="Name"> {user.name}</Descriptions.Item>
           <Descriptions.Item label="Company">{user.company}</Descriptions.Item>
@@ -21,6 +21,8 @@ export const User = (user: IUser) => {
           </Descriptions.Item>
           <Descriptions.Item label="User Bio">{user.bio}</Descriptions.Item>
         </Descriptions>
+      </div>
+      <div className="userCard">
         <Link title="Go to repositories" to={`/repositories/${user.login}`}>
           <Card
             hoverable
@@ -30,7 +32,7 @@ export const User = (user: IUser) => {
             <Meta title={user.login} description={user.name} />
           </Card>
         </Link>
-      </Space>
+      </div>
     </div>
   );
 };

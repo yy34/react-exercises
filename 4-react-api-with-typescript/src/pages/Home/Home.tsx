@@ -1,41 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SearchUser } from "../../components/SearchUser";
 import { User } from "../../components/User";
 import { IUser } from "../../types/IUser";
-import { getUser } from "../../api/GithubAPI";
+import { UserService } from "../../api/GithubAPI";
+import axios, { AxiosError } from "axios";
 import { Col, Row } from "antd";
 import { Spin } from "antd";
+
 export const Home = () => {
   const [user, setUser] = useState<IUser | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const fetchUser = async function (userName: string) {
+  const fetchUser = function (userName: string) {
     setLoading(true);
-    const data: any = await getUser(userName);
-    setLoading(false);
-    const {
-      login,
-      name,
-      avatar_url,
-      company,
-      location,
-      email,
-      bio,
-      followers,
-      following,
-    } = data;
-    const userData: IUser = {
-      login,
-      name,
-      avatar_url,
-      company,
-      location,
-      email,
-      bio,
-      followers,
-      following,
-    };
-    setUser(userData);
+    UserService.getUser(userName)
+      .then((data) => {
+        setUser(data);
+        setLoading(false);
+      })
+      .catch((err: AxiosError) => {
+        setLoading(false);
+        setUser(null);
+        console.log(err.message);
+      });
+    return () => {};
   };
 
   return (
@@ -44,7 +32,7 @@ export const Home = () => {
         <div>
           <SearchUser fetchUser={fetchUser} />
           {loading && <Spin />}
-          {user && <User {...user} />}
+          {user && <User user={user} />}
         </div>
       </Col>
     </Row>

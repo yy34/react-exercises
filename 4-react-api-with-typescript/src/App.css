@@ -7,8 +7,15 @@
   text-align: center;
 }
 .search-user {
-  margin-block-end: 2.5rem;
+  margin-block-end: 2rem;
 }
 .ant-card {
   margin: 0 auto;
+}
+.userInfo {
+  margin-block-start: 2rem;
+}
+.userCard {
+  margin-block-start: 1rem;
+  margin-block-end: 3rem;
 }

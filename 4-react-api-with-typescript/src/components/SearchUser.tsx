@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { Button, Input, Space } from "antd";
-
-export const SearchUser = ({
-  fetchUser,
-}: {
-  fetchUser: (userName: string) => Promise<void>;
-}) => {
+import { SearchProps } from "./SearchProps";
+export const SearchUser = ({ fetchUser }: SearchProps) => {
   const [userName, setUserName] = useState("");
 
   return (

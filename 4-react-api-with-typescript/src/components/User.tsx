@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Card, Descriptions, Space, Badge } from "antd";
+import { Card, Descriptions, Badge } from "antd";
 import { UserProps } from "./userProps";
 
 const { Meta } = Card;

@@ -3,9 +3,8 @@ import { SearchUser } from "../../components/SearchUser";
 import { User } from "../../components/User";
 import { IUser } from "../../types/IUser";
 import { UserService } from "../../api/GithubAPI";
-import axios, { AxiosError } from "axios";
-import { Col, Row } from "antd";
-import { Spin } from "antd";
+import { AxiosError } from "axios";
+import { Col, Row, Spin, notification } from "antd";
 
 export const Home = () => {
   const [user, setUser] = useState<IUser | null>(null);
@@ -21,9 +20,17 @@ export const Home = () => {
       .catch((err: AxiosError) => {
         setLoading(false);
         setUser(null);
-        console.log(err.message);
+        showNotification(err.name, err.message);
       });
     return () => {};
+  };
+
+  const showNotification = (message: any, desc: any) => {
+    notification.error({
+      message: message,
+      description: desc,
+      placement: "topLeft",
+    });
   };
 
   return (

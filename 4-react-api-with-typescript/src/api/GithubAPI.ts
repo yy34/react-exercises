@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { IUser } from "../types/IUser";
+import { IRepo } from "../types/IRepo";
 
 const instance = axios.create({
   baseURL: "https://api.github.com/",
@@ -14,4 +15,6 @@ const request = {
 export const UserService = {
   getUser: (userName: string): Promise<IUser> =>
     request.get(`users/${userName}`),
+  getRepos: (userName: string): Promise<IRepo[]> =>
+    request.get(`/users/${userName}/repos`),
 };

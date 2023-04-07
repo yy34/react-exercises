@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { Card, Descriptions, Badge } from "antd";
-import { UserProps } from "./userProps";
+import { IUser } from "../types/IUser";
+interface UserProps {
+  user: IUser;
+}
 
 const { Meta } = Card;
 export const User = ({ user }: UserProps) => {

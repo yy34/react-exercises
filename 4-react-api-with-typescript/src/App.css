@@ -19,3 +19,10 @@
   margin-block-start: 1rem;
   margin-block-end: 3rem;
 }
+.repoName {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.ant-list-item-meta-content {
+  text-align: left;
+}

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Button, Input, Space } from "antd";
-import { SearchProps } from "./SearchProps";
+
+interface SearchProps {
+  fetchUser: (userName: string) => void;
+}
+
 export const SearchUser = ({ fetchUser }: SearchProps) => {
   const [userName, setUserName] = useState("");
 

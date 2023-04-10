@@ -12,4 +12,5 @@ const request = {
 export const MovieService = {
   getMovies: (search) =>
     request.get(`?apiKey=${APIKey}&s=${search}&type=movie`),
+  getShows: (search) => request.get(`?apiKey=${APIKey}&s=${search}&type=show`),
 };

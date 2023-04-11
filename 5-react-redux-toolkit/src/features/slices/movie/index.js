@@ -6,8 +6,7 @@ export const fetchMovies = createAsyncThunk(
   function (search) {
     MovieService.getMovies(search)
       .then((data) => {
-        console.log("data", data);
-        return data;
+        return data.Search;
       })
       .catch((err) => {
         console.log(err);
@@ -19,8 +18,7 @@ export const fetchShows = createAsyncThunk(
   function (search) {
     MovieService.getShows(search)
       .then((data) => {
-        console.log("data", data);
-        return data;
+        return data.Search;
       })
       .catch((err) => {
         console.log(err);

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Input, Stack } from "@chakra-ui/react";
+import { Button, Input, Stack, useToast } from "@chakra-ui/react";
 import { MainContext, useContext } from "../context/Context";
 
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,7 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const toast = useToast();
 
   const submit = (e) => {
     e.preventDefault();
@@ -32,14 +33,22 @@ export const Login = () => {
         setlogin(false);
         navigate("/");
       })
-      .catch((error) => console.log(error?.response?.data?.message));
+      .catch((error) =>
+        toast({
+          title: error?.message,
+          description: error?.response?.data?.message,
+          status: "error",
+          duration: 2000,
+          isClosable: true,
+        })
+      );
   };
   return (
     <div>
       <form noValidate onSubmit={submit}>
         <Input
           variant="flushed"
-          placeholder="Username"
+          placeholder="Mail"
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}

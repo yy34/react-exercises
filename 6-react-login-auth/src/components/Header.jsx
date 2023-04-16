@@ -1,15 +1,20 @@
 import React from "react";
 import { MainContext, useContext } from "../context/Context";
-import { Button, ButtonGroup, Stack } from "@chakra-ui/react";
+import { Button, Stack } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+
 export const Header = () => {
   const data = useContext(MainContext);
   return (
     <div className="Appn">
       <Stack spacing={4} direction="row" align="center">
-        <ButtonGroup variant="outline" spacing="6">
-          <Button colorScheme="blue">Login</Button>
+        <Link to="/login">
+          <Button>Login</Button>
+        </Link>
+
+        <Link to="/register">
           <Button>Register</Button>
-        </ButtonGroup>
+        </Link>
       </Stack>
     </div>
   );
